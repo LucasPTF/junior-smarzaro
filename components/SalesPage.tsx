@@ -1,9 +1,10 @@
 import Image from "next/image";
+import heroImage from "@/public/junior-hero.png";
+import stageImage from "@/public/junior-palco.png";
 
 type Angle = "a1" | "a2" | "a3";
 
 type HeroContent = {
-  eyebrow: string;
   title: string;
   support: string;
   button: string;
@@ -11,7 +12,6 @@ type HeroContent = {
 
 const heroContent: Record<Angle, HeroContent> = {
   a1: {
-    eyebrow: "Ângulo A1 | Dor e nova saída",
     title:
       "Você não precisa cobrar mais a sua equipe. Precisa mostrar um próximo passo que ela consiga aplicar.",
     support:
@@ -19,7 +19,6 @@ const heroContent: Record<Angle, HeroContent> = {
     button: "Quero destravar minhas vendas",
   },
   a2: {
-    eyebrow: "Ângulo A2 | Quebra de crença",
     title:
       "Seu problema pode não ser falta de bons vendedores. Pode ser falta de aplicação.",
     support:
@@ -27,7 +26,6 @@ const heroContent: Record<Angle, HeroContent> = {
     button: "Quero conhecer o Ciclo 1%",
   },
   a3: {
-    eyebrow: "Ângulo A3 | Resultado prático",
     title:
       "Aprenda passos simples para vender mais, sem curso longo, sem teoria solta e sem mudar tudo de uma vez.",
     support:
@@ -89,11 +87,6 @@ const faqItems = [
     question: "A aula garante aumento de faturamento?",
     answer:
       "Não. O resultado depende da aplicação, do contexto e do desempenho de cada pessoa e empresa. A aula oferece orientação prática, não uma garantia de resultado financeiro.",
-  },
-  {
-    question: "A gravação está incluída?",
-    answer:
-      "Não no ingresso básico. A gravação vitalícia está prevista como adicional opcional por R$ 29,90.",
   },
 ];
 
@@ -186,7 +179,6 @@ export function SalesPage({ angle }: { angle: Angle }) {
         <div className="hero-glow" aria-hidden="true" />
         <div className="shell hero-grid">
           <div className="hero-copy">
-            <div className="angle-label">{hero.eyebrow}</div>
             <p className="hero-kicker">Aula ao vivo Venda 1% Melhor por Dia</p>
             <h1>{hero.title}</h1>
             <p className="hero-support">{hero.support}</p>
@@ -210,10 +202,12 @@ export function SalesPage({ angle }: { angle: Angle }) {
           <div className="hero-visual">
             <div className="hero-frame">
               <Image
-                src="/junior-hero.png"
+                src={heroImage}
                 alt="Júnior Smarzaro em retrato profissional"
                 fill
                 priority
+                unoptimized
+                placeholder="blur"
                 sizes="(max-width: 860px) 92vw, 46vw"
                 className="hero-image"
               />
@@ -453,9 +447,11 @@ export function SalesPage({ angle }: { angle: Angle }) {
         <div className="shell authority-grid">
           <div className="authority-visual">
             <Image
-              src="/junior-palco.png"
+              src={stageImage}
               alt="Júnior Smarzaro conduzindo uma apresentação sobre vendas"
               fill
+              unoptimized
+              placeholder="blur"
               sizes="(max-width: 860px) 92vw, 48vw"
               className="authority-image"
             />
@@ -519,11 +515,6 @@ export function SalesPage({ angle }: { angle: Angle }) {
                 <CheckIcon /> Orientação prática para transformar conhecimento em ação
               </li>
             </ul>
-            <div className="optional-box">
-              <span>Adicionais opcionais previstos</span>
-              <p>Reunião individual: R$ 29,90</p>
-              <p>Gravação vitalícia: R$ 29,90</p>
-            </div>
           </div>
           <aside className="price-card" aria-label="Resumo da oferta">
             <span className="price-label">Ingresso individual</span>
