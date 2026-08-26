@@ -12,22 +12,19 @@ type HeroContent = {
 
 const heroContent: Record<Angle, HeroContent> = {
   a1: {
-    title:
-      "Você não precisa cobrar mais a sua equipe. Precisa mostrar um próximo passo que ela consiga aplicar.",
+    title: "Menos cobrança. Mais clareza para sua equipe aplicar.",
     support:
       "Se você já contratou, treinou e explicou, o problema pode não ser falta de esforço. Na aula Venda 1% Melhor por Dia, você vai conhecer uma forma simples de transformar orientação em ação e voltar a enxergar um caminho possível para as vendas.",
     button: "Quero destravar minhas vendas",
   },
   a2: {
-    title:
-      "Seu problema pode não ser falta de bons vendedores. Pode ser falta de aplicação.",
+    title: "Bons vendedores não bastam sem aplicação.",
     support:
       "Quando o treinamento fica na teoria, a equipe volta à rotina e nada muda. Descubra por que melhorar 1% por vez pode encurtar a distância entre saber o que fazer e realmente fazer.",
     button: "Quero conhecer o Ciclo 1%",
   },
   a3: {
-    title:
-      "Aprenda passos simples para vender mais, sem curso longo, sem teoria solta e sem mudar tudo de uma vez.",
+    title: "Venda mais com passos simples e aplicáveis.",
     support:
       "Em uma aula ao vivo, Júnior Smarzaro mostra como transformar pequenas melhorias em ações que você e sua equipe podem começar a aplicar no mesmo dia.",
     button: "Quero participar por R$ 29,90",
